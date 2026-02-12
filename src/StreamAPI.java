@@ -81,5 +81,13 @@ public class StreamAPI {
         System.out.println("\nIs at least one number even?");
         System.out.println(anyEven);
 
+        // Sort numbers in Ascending Order
+        List<Integer> sortedNumbers = numbers.stream()
+                .sorted()   // Ascending order
+                .collect(Collectors.toList());
+
+        System.out.println("\nNumbers in Ascending Order:");
+        sortedNumbers.forEach(System.out::println);
+
     }
 }
