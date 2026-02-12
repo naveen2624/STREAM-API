@@ -1,9 +1,6 @@
+import java.util.*;
 import java.util.stream.Stream;
-import java.util.Arrays;
-import java.util.List;
 import java.util.stream.Collectors;
-import java.util.Optional;
-import java.util.Comparator;
 
 public class StreamAPI {
     public static void main(String[] args){
@@ -55,5 +52,21 @@ public class StreamAPI {
 
         System.out.println("\nMaximum Even Number:");
         maxEven.ifPresent(System.out::println);
+        // Find Sum
+        int sum = numbers.stream()
+                .mapToInt(Integer::intValue)
+                .sum();
+
+        System.out.println("\nSum of Numbers:");
+        System.out.println(sum);
+
+// Find Average
+        OptionalDouble average = numbers.stream()
+                .mapToInt(Integer::intValue)
+                .average();
+
+        System.out.println("\nAverage of Numbers:");
+        average.ifPresent(System.out::println);
+
     }
 }
