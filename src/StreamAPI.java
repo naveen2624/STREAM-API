@@ -20,16 +20,15 @@ public class StreamAPI {
                 .map(n -> n * 2)
                 .collect(Collectors.toList());
 
-        // Display result
-        System.out.println("Doubled Values:");
+        System.out.println("\nDoubled Values:");
         doubledNumbers.forEach(System.out::println);
-        // Transform each element to double and collect into a new list
-        List<Integer> doubledList = numbers.stream()
-                .map(n -> n * 2)
+
+        // Filter even numbers from the number stream
+        List<Integer> evenNumbers = numbers.stream()
+                .filter(n -> n % 2 == 0)   // Condition for even numbers
                 .collect(Collectors.toList());
 
-        // Display the new list
-        System.out.println("\nNew List with Doubled Values:");
-        doubledList.forEach(System.out::println);
+        System.out.println("\nEven Numbers:");
+        evenNumbers.forEach(System.out::println);
     }
 }
