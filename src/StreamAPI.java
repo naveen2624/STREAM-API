@@ -2,6 +2,7 @@ import java.util.stream.Stream;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.Optional;
 
 public class StreamAPI {
     public static void main(String[] args){
@@ -23,12 +24,20 @@ public class StreamAPI {
         System.out.println("\nDoubled Values:");
         doubledNumbers.forEach(System.out::println);
 
-        // Filter even numbers from the number stream
+        // Filter even numbers
         List<Integer> evenNumbers = numbers.stream()
-                .filter(n -> n % 2 == 0)   // Condition for even numbers
+                .filter(n -> n % 2 == 0)
                 .collect(Collectors.toList());
 
         System.out.println("\nEven Numbers:");
         evenNumbers.forEach(System.out::println);
+
+        // Find the first even number
+        Optional<Integer> firstEven = numbers.stream()
+                .filter(n -> n % 2 == 0)
+                .findFirst();
+
+        System.out.println("\nFirst Even Number:");
+        firstEven.ifPresent(System.out::println);
     }
 }
