@@ -67,6 +67,19 @@ public class StreamAPI {
 
         System.out.println("\nAverage of Numbers:");
         average.ifPresent(System.out::println);
+        // Check if all numbers are even
+        boolean allEven = numbers.stream()
+                .allMatch(n -> n % 2 == 0);
+
+        System.out.println("\nAre all numbers even?");
+        System.out.println(allEven);
+
+// Check if at least one number is even
+        boolean anyEven = numbers.stream()
+                .anyMatch(n -> n % 2 == 0);
+
+        System.out.println("\nIs at least one number even?");
+        System.out.println(anyEven);
 
     }
 }
